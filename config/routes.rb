@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   #PostImagesのルーティングをresourcesで一括作成（onlyで指定）
   resources :post_images, only: [:new, :create, :index, :show] do
+  	resource :favorites, only: [:create, :destroy]
   	resource :post_comments, only: [:create, :destroy]
   end
 
